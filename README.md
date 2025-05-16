@@ -15,3 +15,8 @@ is the second guest, and what is localhost:5672 is for? <br>
 ## Simulation Slow Subscriber
 ![Queue Simulation](image/queue.png)
 Grafik pada RabbitMQ menunjukkan adanya total 20 pesan dalam antrian karena simulasi "Slow Subscriber" yang sedang berjalan. Dalam skenario ini, publisher mengirim pesan lebih cepat daripada kemampuan subscriber untuk memprosesnya, sehingga pesan-pesan tersebut menumpuk dalam antrian.
+
+## Running at least three subscribers
+![Console](image/console.png)
+![Performance](image/rabbitmq.png)
+Setelah menjalankan perintah sebanyak 3 kali dengan dibukanya 3 subscribers, terlihat tidak terjadi lonjakan pada queue message pada RabbitMQ yang dimana ini menandakan bahwa tiap message yang dikirim oleh publisher langsung diterima dan diproses oleh ketiga subscribers tersebut tanpa ada backlog atau antrian message yang tertinggal di broker. Hal ini menunjukkan bahwa RabbitMQ berhasil menyalurkan message secara efisien ke ketiga subscriber yang aktif, memungkinkan mereka untuk memproses message secara real-time.
